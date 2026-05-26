@@ -1,0 +1,48 @@
+@use './tokens' as *;
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  // safe area for iPhone home indicator
+  padding-bottom: env(safe-area-inset-bottom);
+
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 10px 4px 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    font-family: inherit;
+    transition: color $transition;
+    // minimum tap target
+    min-height: 56px;
+
+    &:hover { color: #6b7280; }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+}

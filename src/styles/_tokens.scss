@@ -1,0 +1,83 @@
+/** ── Tokens ─────────────────────────────────────────────────────────────────── */
+$white:         #ffffff;
+$gray-50:       #f9fafb;
+$gray-100:      #f3f4f6;
+$gray-200:      #e5e7eb;
+$gray-300:      #d1d5db;
+$gray-400:      #9ca3af;
+$gray-500:      #767676;
+$gray-600:      #444444;
+$gray-700:      #374151;
+$gray-900:      #111827;
+
+$purple:        #5c00dc;
+$purple-shadow: #6c3fbd14;
+$purple-light:  #ede9f9;
+$purple-bg:     #5c00dc14;
+
+$red-dot:       #e04040;
+$pink-dot:      #e879a0;
+
+$sidebar-w:       238px;
+$sidebar-left-w:  63px;
+$radius-md:       4px;
+$radius-lg:       8px;
+$font:            'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$transition:      150ms ease;
+
+$breakpoint-desktop:      1024px;
+$breakpoint-tablet:       768px;
+$breakpoint-mobile:       320px;
+
+$font-sm:         0.625em;      // Extra small text — 10px
+$font-txt:        0.875rem;     // Default body / paragraph text — 14px
+$font-md:         1rem;         // Base UI text size — 16p
+$font-sh:         1.25rem;      // Section heading — 20px
+$font-lh:         1.5rem;       // Large heading / modal title — 24px
+$font-lg:         2rem;         // Hero / major title — 32px
+
+/** ── Reset ───────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: $font-txt;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: $font;
+    background: $white;
+    color: $gray-700;
+    line-height: 1.5;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

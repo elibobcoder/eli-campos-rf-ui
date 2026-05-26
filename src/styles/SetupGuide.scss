@@ -1,0 +1,242 @@
+@use './tokens' as *;
+
+.setup-guide {
+  &__intro {
+    margin-bottom: 20px;
+  }
+
+  &__heading {
+    font-size: $font-lh;
+    font-weight: 600;
+    color: $gray-900;
+    letter-spacing: -0.01em;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  &__subheading {
+    font-size: $font-md;
+    color: $gray-600;
+    line-height: 1.5;
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid $gray-200;
+    margin: 20px 0 28px;
+  }
+}
+
+// ── Section ──────────────────────────────────────────────────────────────────
+.guide-section {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  &__header-logo {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: $font-sh;
+    font-weight: 600;
+    color: $gray-900;
+    line-height: 1.5;
+  }
+}
+
+.section-icon {
+  width: 32px;
+  height: 32px;
+}
+
+// ── Step label ───────────────────────────────────────────────────────────────
+.guide-step {
+  margin-bottom: 28px;
+
+  &__label {
+    font-size: $font-txt;
+    color: $gray-700;
+    margin-bottom: 10px;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+// ── Wide card (Step 1) ───────────────────────────────────────────────────────
+.step-wide-card {
+  display: flex;
+  border: 1px solid $gray-200;
+  border-radius: $radius-md;
+  background: $white;
+  overflow: hidden;
+  min-height: 120px;
+
+  &__col {
+    flex: 1;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__col-title {
+    font-size: $font-txt;
+    font-weight: 600;
+    color: $gray-900;
+  }
+
+  &__col-desc {
+    font-size: $font-txt;
+    color: $gray-700;
+    line-height: 1.5;
+  }
+}
+
+// Step 1 card — stack vertically on mobile
+.step-wide-card--mobile {
+  flex-direction: column;
+
+  .step-wide-card__col {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// ── Workflow grid (Step 2 & 3) ────────────────────────────────────────────────
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  align-items: stretch;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.workflow-card {
+  border: 1px solid $gray-200;
+  border-radius: $radius-md;
+  background: $white;
+  padding: 32px 24px;
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: box-shadow $transition, border-color $transition;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #c4b5fd;
+    box-shadow: 0 2px 8px $purple-shadow;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  &__header-logo {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: $font-txt;
+    font-weight: 600;
+    color: $gray-900;
+  }
+
+  &__desc {
+    font-size: $font-txt;
+    color: $gray-700;
+    line-height: 1.5;
+  }
+}
+
+.add-workflow-card {
+  border: 1px solid $gray-300;
+  border-radius: $radius-md;
+  background: $white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  padding: 32px 24px;
+  min-height: 120px;
+  height: 100%;
+
+  transition: border-color $transition, background $transition;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #c4b5fd;
+    box-shadow: 0 2px 8px $purple-shadow;
+  }
+
+  &__label {
+    font-size: $font-txt;
+    color: $gray-700;
+    font-weight: 500;
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+  }
+}
+
+// Workflow grid — 2-col on tablet, 1-col on mobile
+.workflow-grid--mobile {
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Portal card (Step 3) ─────────────────────────────────────
+.workflow-card-portal {
+  min-height: 120px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+  }
+}

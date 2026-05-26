@@ -1,0 +1,338 @@
+@use './tokens' as *;
+
+.sidebar {
+  height: 100vh;
+  background: $white;
+  border-right: 1px solid $gray-200;
+
+  display: flex;
+  overflow: hidden;
+
+  // ─────────────────────────────────────────────────────────────
+  // LEFT SIDE
+  // ─────────────────────────────────────────────────────────────
+
+  &__left {
+    width: $sidebar-left-w;
+    min-width: $sidebar-left-w;
+    border-right: 1px solid $gray-200;
+    background: $white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 7.5px;
+  }
+
+  &__left-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__left-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 12px;
+  }
+
+  // ── Nav Logo ──────────────────────────────────────────────────
+
+  &__nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0 24px 12px;
+
+    flex-shrink: 0;
+  }
+
+  &__nav-logo-small {
+    width: 32px;
+    height: 32px;
+  }
+
+  // ── Nav Org ───────────────────────────────────────────────
+
+  &__nav-org {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav-org-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-md;
+    object-fit: cover;
+  }
+
+  // ── Avatar ───────────────────────────────────────────────────
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $gray-600;
+    color: $white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: $font-txt;
+    font-weight: 700;
+    flex-shrink: 0;
+
+    cursor: pointer;
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // RIGHT SIDE
+  // ─────────────────────────────────────────────────────────────
+
+  &__right {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 12px 8px;
+  }
+
+  // ── Header ────────────────────────────────────────────────────
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    padding: 8px 8px 12px;
+  }
+
+  &__header-text {
+    font-size: $font-txt;
+    font-weight: 600;
+    color: $gray-900;
+    line-height: 2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__header-detail {
+    font-size: $font-sm;
+
+    white-space: nowrap;
+  }
+
+  // ── Search ───────────────────────────────────────────────────
+
+  &__search {
+    margin: 0 8px 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: $gray-100;
+    border: 1px solid $gray-200;
+    border-radius: $radius-md;
+
+    padding: 4px;
+
+    // Hover
+    &:hover {
+      background: $white;
+      border-color: $gray-400;
+    }
+
+    // Input focused
+    &:focus-within {
+      background: $white;
+      border-color: $purple;
+
+      box-shadow: 0 0 0 3px rgba(108, 63, 189, 0.12);
+    }
+  }
+
+  &__search-icon {
+    width: 13px;
+    height: 13px;
+    color: $gray-400;
+
+    flex-shrink: 0;
+  }
+
+  &__search-input {
+    flex: 1;
+    min-width: 0;
+
+    background: none;
+    border: none;
+    outline: none;
+
+    font-size: $font-txt;
+    color: $gray-700;
+
+    &::placeholder {
+      color: $gray-400;
+    }
+  }
+
+  // ── Mega Nav ──────────────────────────────────────────────────────
+
+  &__mega-nav {
+    flex: 1;
+    padding: 0 6px;
+  }
+
+  &__mega-nav-group {
+    margin-bottom: 2px;
+  }
+
+  &__mega-nav-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 7px 10px;
+    border-radius: $radius-lg;
+
+    font-size: $font-txt;
+    font-weight: 500;
+    color: $gray-600;
+
+    text-align: left;
+
+    transition:
+      background $transition,
+      color $transition;
+
+    &:hover {
+      background: $gray-100;
+      color: $gray-900;
+    }
+
+    &--active {
+      background: $purple-bg;
+      color: $purple;
+      font-weight: 600;
+    }
+  }
+
+  &__mega-nav-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+
+    background: $gray-300;
+
+    flex-shrink: 0;
+
+    transition: background $transition;
+
+    &--active {
+      background: $purple;
+    }
+  }
+
+  &__mega-nav-label {
+    flex: 1;
+    text-align: left;
+  }
+
+  // ── Subnav ───────────────────────────────────────────────────
+
+  &__subnav {
+    margin: 2px 0 4px 42px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  &__subnav-item {
+    width: 100%;
+    text-align: left;
+
+    padding: 7px 0;
+    border-radius: $radius-md;
+
+    font-size: $font-txt;
+    font-weight: 600;
+    color: $gray-500;
+
+    transition:
+      background $transition,
+      color $transition;
+
+    &:hover {
+      background: $gray-100;
+      color: $gray-700;
+    }
+
+    &--selected {
+      color: $purple;
+      font-weight: 600;
+    }
+  }
+}
+
+// Tablet — icon-only strip (left side only, right panel hidden)
+.sidebar--icon-only {
+  width: $sidebar-left-w;
+
+  .sidebar__right {
+    display: none;
+  }
+}
+
+.sidebar--icon-only.sidebar--tablet-open {
+  .sidebar__right {
+    display: flex;
+  }
+}
+
+// Tablet drawer — slid in
+.sidebar--tablet-open {
+  position: fixed;
+  top: 0;
+  // left: $sidebar-left-w;
+  height: 100vh;
+  width: $sidebar-w;
+
+  transform: translateX(0);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+  z-index: 200;
+}
+
+// Mobile drawer — fixed, off-screen by default
+.sidebar--drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform $transition;
+  box-shadow: none;
+}
+
+// Mobile drawer — slid in
+.sidebar--drawer-open {
+  transform: translateX(0);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+}

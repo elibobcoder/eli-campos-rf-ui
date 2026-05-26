@@ -1,0 +1,155 @@
+@use './tokens' as *;
+
+.event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 40px 20px;
+  gap: 16px;
+
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__logo-wrap {
+    width: 95px;
+    height: 95px;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    background: #f5f0e8;
+    border: 1px solid $gray-200;
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__info {
+    padding-top: 2px;
+  }
+
+  &__title {
+    font-size: $font-lg;
+    font-weight: 300;
+    color: $gray-900;
+    letter-spacing: -0.01em;
+    line-height: 1.8;
+    margin-bottom: 4px;
+  }
+
+  &__meta {
+    font-size: $font-md;
+    color: $gray-500;
+    line-height: 1.5;
+  }
+
+  &__edit-btn {
+    background: $purple;
+    border: 2px solid $purple;
+    color: $white;
+    font-weight: bold;
+    padding: 8px 16px;
+    gap: 10px;
+    border-radius: $radius-md;
+    transition: background $transition;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 4px;
+
+    &:hover {
+      background: $white;
+      color: $purple;
+    }
+  }
+
+  &__top-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    flex-shrink: 0;
+
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+}
+
+// mobile variant
+.event-header--mobile {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 16px;
+  gap: 12px;
+
+  .event-header__top-row {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .event-header__left {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .event-header__logo-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+  }
+
+  .event-header__info {
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .event-header__title {
+    font-size: 1.125rem;
+    line-height: 1.2;
+    margin-bottom: 2px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .event-header__meta {
+    font-size: 0.813rem;
+    line-height: 1.35;
+  }
+
+  .event-header__hamburger {
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+  }
+}
+
+// Full width mobile button
+.event-header__edit-btn--full {
+  width: 100%;
+  justify-content: center;
+}
